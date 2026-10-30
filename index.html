@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nexus World Park – Dê o Play na Sua Realidade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f6fb;--sf:#fff;--tx:#1a1e35;--mu:#586082;--ln:#dfe3f1;--nav:rgba(245,246,251,.92);--mag:#c4168f;--cy:#0a7f9c;--vi:#6a35d6;--gr:#047857;--am:#b45309;--rd:#c62828;
+--hd:'Chakra Petch','Trebuchet MS',sans-serif;--bd:'Figtree','Segoe UI',Roboto,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0c19;--sf:#131730;--tx:#eceefb;--mu:#a0a8cc;--ln:#272c52;--nav:rgba(10,12,25,.92);--mag:#ff58c8;--cy:#2fd8f3;--vi:#b196ff;--gr:#3fdca5;--am:#fbbf24;--rd:#ff7b7b}}
+:root[data-theme="dark"]{--bg:#0a0c19;--sf:#131730;--tx:#eceefb;--mu:#a0a8cc;--ln:#272c52;--nav:rgba(10,12,25,.92);--mag:#ff58c8;--cy:#2fd8f3;--vi:#b196ff;--gr:#3fdca5;--am:#fbbf24;--rd:#ff7b7b}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 16px/1.6 var(--bd);-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--nav);z-index:10}
+h1,h2,h3{font-family:var(--hd);line-height:1.15;margin:0}
+h2{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:6px}
+h3{font-size:1.1rem;margin-bottom:8px}
+p{margin:0 0 10px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--nav);backdrop-filter:blur(10px);border-bottom:1px solid var(--ln)}
+nav .wrap{display:flex;align-items:center;gap:6px;overflow-x:auto;scrollbar-width:none;min-height:54px}
+nav b{font-family:var(--hd);color:var(--mag);margin-right:10px;white-space:nowrap}
+nav a{color:var(--mu);text-decoration:none;padding:6px 12px;border-radius:99px;white-space:nowrap;font-size:.92rem}
+nav a:hover,nav a:focus-visible{color:var(--tx);background:var(--ln);outline:none}
+.hero{background:radial-gradient(circle at 80% 10%,rgba(255,88,200,.28),transparent 45%),radial-gradient(circle at 10% 90%,rgba(47,216,243,.22),transparent 45%),linear-gradient(#0a0c19,#150f33);color:#f2f3ff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px) 0 0/32px 32px,linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px) 0 0/32px 32px;mask-image:linear-gradient(#000,transparent 85%)}
+.hero .wrap{position:relative;padding-top:72px;padding-bottom:56px}
+.hero h1{font-size:clamp(2.6rem,10vw,5.6rem);font-weight:700;letter-spacing:-.01em;background:linear-gradient(90deg,#ff58c8,#2fd8f3);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .slg{font-family:var(--hd);font-size:clamp(1.2rem,3.4vw,1.8rem);margin:10px 0 6px}
+.hero p.lead{max-width:56ch;color:#c5cae8}
+.menu{display:flex;flex-direction:column;gap:8px;margin:28px 0;max-width:340px}
+.menu a{font-family:var(--hd);font-weight:600;color:#f2f3ff;text-decoration:none;padding:10px 16px;border:1px solid rgba(255,255,255,.25);border-radius:6px;background:rgba(255,255,255,.05)}
+.menu a:first-child{border-color:#ff58c8;background:rgba(255,88,200,.18)}
+.menu a::before{content:"▶ ";color:#2fd8f3}
+.menu a:hover,.menu a:focus-visible{background:rgba(47,216,243,.2);outline:2px solid #2fd8f3}
+.hud{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.hud div{border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:10px 14px;background:rgba(10,12,25,.55)}
+.hud strong{display:block;font-family:var(--hd);font-size:1.6rem;color:#2fd8f3}
+.hud span{font-size:.85rem;color:#b5bbdd}
+section{padding:56px 0 8px}
+.sub{color:var(--mu);margin-bottom:22px;max-width:62ch}
+.g{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:8px;padding:18px;border-top:3px solid var(--cy)}
+.card.m{border-top-color:var(--mag)}.card.v{border-top-color:var(--vi)}.card.g2{border-top-color:var(--gr)}.card.a{border-top-color:var(--am)}
+.card p:last-child{margin-bottom:0}
+.card b{color:var(--tx)}
+.tw{overflow-x:auto;border:1px solid var(--ln);border-radius:8px;background:var(--sf)}
+table{width:100%;border-collapse:collapse;min-width:640px;font-size:.93rem}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--ln);vertical-align:top}
+th{font-family:var(--hd);color:var(--mu);font-weight:600}
+tr:last-child td{border-bottom:0}
+.pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:.8rem;font-weight:600;border:1px solid currentColor;white-space:nowrap}
+.p-r{color:var(--rd)}.p-a{color:var(--am)}.p-v{color:var(--vi)}.p-g{color:var(--gr)}.p-c{color:var(--cy)}.p-m{color:var(--mag)}
+.fig{background:var(--sf);border:1px solid var(--ln);border-radius:8px;padding:14px;margin-bottom:16px}
+.fig svg{width:100%;height:auto;display:block}
+.fig text{font-family:var(--bd);fill:var(--tx);font-size:12px}
+.fig .mu{fill:var(--mu);font-size:11px}
+.bars{display:grid;gap:14px}
+.bar{background:var(--sf);border:1px solid var(--ln);border-radius:8px;padding:14px 16px}
+.bar .t{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:600}
+.bar .t span:last-child{font-family:var(--hd)}
+.trk{height:12px;border-radius:3px;background:var(--ln);margin:8px 0;overflow:hidden}
+.trk i{display:block;height:100%}
+.bar small{color:var(--mu)}
+.tot{display:flex;justify-content:space-between;font-family:var(--hd);font-size:1.2rem;padding:14px 4px}
+footer{margin-top:64px;border-top:1px solid var(--ln);padding:28px 0 36px;color:var(--mu);font-size:.88rem}
+@media(max-width:600px){section{padding-top:44px}.hero .wrap{padding-top:48px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav aria-label="Seções"><div class="wrap">
+<b>NEXUS</b><a href="#conceito">Conceito</a><a href="#publico">Público</a><a href="#atracoes">Atrações</a><a href="#infra">Infraestrutura</a><a href="#planta">Planta</a><a href="#orcamento">Orçamento</a><a href="#marketing">Marketing</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+<h1>Nexus World Park</h1>
+<p class="slg">“Dê o Play na Sua Realidade”</p>
+<p class="lead">Um parque de 1 hectare na Grande São Paulo onde você entra no motor gráfico de um console e vira o protagonista da própria jornada.</p>
+<div class="menu"><a href="#atracoes">Ver atrações</a><a href="#planta">Explorar o mapa</a><a href="#orcamento">Ver investimento</a></div>
+<div class="hud">
+<div><strong>10.000 m²</strong><span>Área (1 hectare)</span></div>
+<div><strong>R$ 10 mi</strong><span>CAPEX total</span></div>
+<div><strong>R$ 149,99</strong><span>Ticket psicológico</span></div>
+<div><strong>2.700 p/h</strong><span>Capacidade nominal</span></div>
+</div></div></header>
+
+<main class="wrap">
+<section id="conceito">
+<h2>Identidade e conceito</h2>
+<p class="sub">O parque se posiciona como a ponte entre o universo digital dos videogames e o mundo físico.</p>
+<div class="g">
+<div class="card v"><h3>Posicionamento e slogan</h3><p>O Nexus World Park é a ponte definitiva entre os videogames e o mundo físico. O slogan <i>“Dê o Play na Sua Realidade”</i> convida o visitante a deixar de ser espectador e se tornar o protagonista da própria jornada.</p></div>
+<div class="card"><h3>Narrativa e ambientação</h3><p>O conceito central é o <b>“Isekai Gamer”</b>: o visitante é transportado para dentro do motor gráfico de um console. O parque se divide em “Mundos” que simulam gêneros clássicos: <b>Ação, Corrida, Terror, RPG e Sandbox</b>.</p></div>
+<div class="card g2"><h3>Localização</h3><p><b>Terreno de 10.000 m² (1 hectare)</b> na Grande São Paulo, com estrutura híbrida: pavilhão indoor climatizado e arena outdoor imersiva, para operar o ano todo independentemente do clima.</p></div>
+</div>
+<h3 style="margin:26px 0 12px">Horários de funcionamento</h3>
+<div class="g">
+<div class="card a"><h3>Quarta e quinta · 12h às 20h</h3><p>Grupos escolares, excursões universitárias e e-sports amadores.</p></div>
+<div class="card m"><h3>Sexta e sábado · 10h às 22h</h3><p>Funcionamento estendido para o público jovem, com show noturno.</p></div>
+<div class="card g2"><h3>Domingo · 10h às 20h</h3><p>Foco em famílias e público multidisciplinar.</p></div>
+</div>
+<p class="sub" style="margin-top:12px">Segunda e terça: fechado.</p>
+</section>
+
+<section id="publico">
+<h2>Perfil do público-alvo</h2>
+<p class="sub">Quem entra no Nexus e o que procura.</p>
+<div class="g">
+<div class="card a"><h3>Dados demográficos</h3>
+<p><b>Faixa etária:</b> 12 a 35 anos (núcleo: Geração Z e Millennials), além de famílias com crianças a partir de 6 anos.</p>
+<p><b>Gênero:</b> equilibrado, com 52% masculino, 45% feminino e 3% não binário.</p>
+<p><b>Abrangência:</b> Grande São Paulo e raio turístico de até 150 km.</p></div>
+<div class="card"><h3>Psicografia e motivações</h3>
+<p>Fãs de games, cultura pop, tecnologia e e-sports. Buscam escapismo imersivo, pertencimento a comunidades e status social por meio de registros compartilháveis no Instagram e no TikTok.</p>
+<p><b>Medos:</b> filas monótonas e falta de interatividade real.</p></div>
+</div>
+</section>
+
+<section id="atracoes">
+<h2>Atrações e jornada emocional</h2>
+<p class="sub">Seis atrações alternam picos de adrenalina e zonas de descompressão, para evitar a fadiga sensorial.</p>
+<div class="tw"><table>
+<tr><th>Atração</th><th>Franquia</th><th>Mecânica</th><th>Capacidade</th><th>Gatilho</th></tr>
+<tr><td><b>Sonic Green Hill Rush</b></td><td>Sonic the Hedgehog</td><td>Montanha-russa de lançamento magnético com túneis de LED</td><td>800 p/h</td><td><span class="pill p-r">Dopamina e adrenalina</span></td></tr>
+<tr><td><b>Mario Kart Battle Arena</b></td><td>Mario Kart</td><td>Carrinho bate-bate com projeção mapeada de power-ups</td><td>400 p/h</td><td><span class="pill p-a">Competição e euforia</span></td></tr>
+<tr><td><b>Leap of Faith Tower</b></td><td>Assassin’s Creed</td><td>Torre de queda livre (40 m) com parada pneumática suave</td><td>600 p/h</td><td><span class="pill p-v">Adrenalina pura</span></td></tr>
+<tr><td><b>Spencer Mansion Dark Ride</b></td><td>Resident Evil</td><td>Labirinto com atores, animatrônicos e efeitos sensoriais</td><td>300 p/h</td><td><span class="pill p-m">Medo e alívio</span></td></tr>
+<tr><td><b>Minecraft Builder’s Zone</b></td><td>Minecraft</td><td>Playground modular interativo com blocos macios de E.V.A.</td><td>Fluxo contínuo</td><td><span class="pill p-g">Ocitocina e família</span></td></tr>
+<tr><td><b>No Man’s Sky VR</b></td><td>No Man’s Sky</td><td>Planetário imersivo em óculos de realidade virtual 8K</td><td>200 p/h</td><td><span class="pill p-c">Relaxamento e contemplação</span></td></tr>
+</table></div>
+
+<h3 style="margin:28px 0 6px">Mapa neuroemocional da jornada</h3>
+<p class="sub">Picos de adrenalina e medo se equilibram com zonas de descompressão ricas em ocitocina.</p>
+<div class="fig"><svg viewBox="0 0 620 230" role="img" aria-label="Curva de intensidade emocional ao longo da visita: pico inicial no Sonic, descompressão no VR, medo no Resident Evil, pico final no show e queda suave na Safe Room">
+<line x1="20" y1="200" x2="600" y2="200" stroke="var(--ln)"/><line x1="20" y1="20" x2="20" y2="200" stroke="var(--ln)"/>
+<path d="M20 190 C50 60 70 55 95 58 S170 160 235 158 S315 70 345 68 S415 30 455 30 S545 160 580 160" fill="none" stroke="var(--vi)" stroke-width="3"/>
+<g fill="var(--mag)"><circle cx="95" cy="58" r="5"/><circle cx="345" cy="68" r="5"/><circle cx="455" cy="30" r="7"/></g>
+<g fill="var(--gr)"><circle cx="235" cy="158" r="5"/><circle cx="580" cy="160" r="6"/></g>
+<text x="62" y="46">Sonic Rush</text><text x="170" y="184">Minecraft e VR</text><text x="298" y="56">Terror</text><text x="418" y="18">Pico: Boss Fight</text><text x="512" y="182">Safe Room</text>
+<text class="mu" x="24" y="216">Início</text><text class="mu" x="550" y="216">Saída</text><text class="mu" x="26" y="34">Intensidade</text>
+</svg></div>
+<div class="g">
+<div class="card m"><h3>Pico: Boss Fight Final</h3><p>O ponto alto é o show de encerramento no Hub Central: uma batalha imersiva com projeção mapeada, lasers e pirotecnia fria, em que as pulseiras de LED dos visitantes se sincronizam para “derrotar o vilão”.</p></div>
+<div class="card g2"><h3>Fim: Safe Room</h3><p>A saída passa pela Safe Room: luzes âmbar, música suave e um broche “Level Completed” de brinde. A última memória é de segurança, conquista e alívio.</p></div>
+</div>
+</section>
+
+<section id="infra">
+<h2>Infraestrutura operacional e sensorial</h2>
+<p class="sub">Alimentação, higiene, saúde e acesso, todos dentro da narrativa do parque.</p>
+<div class="g">
+<div class="card a"><h3>Alimentação temática</h3>
+<p><b>Taverna do RPG:</b> restaurante principal com ambientação medieval (Skyrim e The Witcher), com refeições completas e sucos energéticos, as “Poções de Vida/Mana”.</p>
+<p><b>Overcooked Fast-Food:</b> quiosque ágil de lanches, com painéis interativos de metas e contagem regressiva.</p>
+<p><b>Capacidade e volume:</b> a Taverna tem 300 lugares (cerca de 350 refeições por hora no pico) e o Overcooked tem 200 lugares (cerca de 600 lanches por hora). Estimativa total: 950 atendimentos por hora, em 500 lugares dentro do Hub Central.</p></div>
+<div class="card g2"><h3>Higiene e acessibilidade</h3>
+<p><b>Character Customization (sanitários):</b> ambientes 100% adaptados para PCD, com trocadores e salas de descompressão sensorial.</p>
+<p><b>Quantidade e distribuição:</b> 6 blocos de sanitários (entrada, zonas 2, 3 e 4, e 2 no Hub Central), com 72 pontos de uso no total, ou 1 para cada 43 pessoas na capacidade estática de 3.100.</p>
+<p><b>Acessibilidade e apoio:</b> 1 cabine PCD completa por bloco, 2 fraldários e 2 vestiários com chuveiro para grupos de excursão e e-sports.</p>
+<p><b>Manutenção e limpeza:</b> ronda de higienização a cada 30 minutos, com checklist digital por QR code e 2 profissionais por bloco, mais limpeza profunda diária após o fechamento.</p></div>
+<div class="card m"><h3>Saúde e segurança</h3>
+<p><b>Centro Pokémon (posto médico):</b> pronto atendimento com decoração temática reconfortante e socorristas habilitados.</p>
+<p><b>Equipe e brigada de incêndio:</b> 12 socorristas e brigadistas por turno (cerca de 1 para cada 250 visitantes), 1 ambulância de plantão e 4 desfibriladores (DEA) distribuídos pelo parque. O plano de abandono mantém saídas de emergência sinalizadas, desobstruídas e independentes.</p></div>
+<div class="card v"><h3>Estacionamento e acesso</h3>
+<p>350 vagas para carros e 10 vagas para ônibus e vans de excursão, na zona de Estacionamento e Logística.</p>
+<p><b>Tarifas:</b> carros pagam R$ 30 por dia (R$ 25 na compra antecipada online). Ônibus e vans de excursão não pagam, mas precisam agendar o grupo. As vagas reservadas para PCD e idosos são gratuitas.</p>
+<p><b>Fluxo:</b> entrada e saída separadas, com cancelas automáticas e leitura de placa. Os ônibus desembarcam direto no pórtico da Zona 1.</p></div>
+</div>
+</section>
+
+<section id="planta">
+<h2>Planta baixa e uso do solo</h2>
+<p class="sub">Layout em “Hub & Spoke”: as zonas se conectam a uma praça central, o que melhora o fluxo de pedestres, a visibilidade e as saídas de emergência.</p>
+<div class="fig"><svg viewBox="0 0 620 340" role="img" aria-label="Planta esquemática: Hub Central ao meio, Zona 2 à esquerda, Zona 3 acima, Zona 4 à direita, Zona 1 e entrada abaixo">
+<rect x="10" y="10" width="600" height="320" rx="8" fill="none" stroke="var(--mu)" stroke-dasharray="6 5"/>
+<rect x="30" y="100" width="150" height="130" rx="6" fill="none" stroke="var(--cy)" stroke-width="2"/><text x="42" y="150">Zona 2</text><text class="mu" x="42" y="168">Speed e Action</text><text class="mu" x="42" y="184">2.200 m²</text>
+<rect x="225" y="25" width="170" height="90" rx="6" fill="none" stroke="var(--am)" stroke-width="2"/><text x="237" y="62">Zona 3</text><text class="mu" x="237" y="80">High Thrill e Horror</text><text class="mu" x="237" y="96">1.800 m²</text>
+<rect x="440" y="100" width="150" height="130" rx="6" fill="none" stroke="var(--gr)" stroke-width="2"/><text x="452" y="150">Zona 4</text><text class="mu" x="452" y="168">Creative e VR</text><text class="mu" x="452" y="184">1.500 m²</text>
+<circle cx="310" cy="170" r="52" fill="none" stroke="var(--mag)" stroke-width="2.5"/><text x="276" y="166">Hub Central</text><text class="mu" x="268" y="184">Gastronomia 1.500 m²</text>
+<rect x="215" y="250" width="190" height="62" rx="6" fill="none" stroke="var(--vi)" stroke-width="2"/><text x="227" y="276">Zona 1 · Entrada e Safe Room</text><text class="mu" x="227" y="294">1.000 m²</text>
+<rect x="30" y="250" width="150" height="62" rx="6" fill="none" stroke="var(--mu)" stroke-dasharray="3 3"/><text x="42" y="276">Estacionamento</text><text class="mu" x="42" y="294">1.500 m²</text>
+<rect x="440" y="250" width="150" height="62" rx="6" fill="none" stroke="var(--mu)"/><text x="452" y="276">Serviços e Saúde</text><text class="mu" x="452" y="294">500 m²</text>
+</svg></div>
+<div class="tw"><table>
+<tr><th>Zona</th><th>Área</th><th>Atrações e serviços</th><th>Capacidade estática</th></tr>
+<tr><td><b>Zona 1: Start Menu e Save Room</b></td><td>1.000 m²</td><td>Pórtico de entrada, bilheteria, lockers e loja temática de saída</td><td>450</td></tr>
+<tr><td><b>Zona 2: Speed e Action</b></td><td>2.200 m²</td><td>Sonic Green Hill Rush e Mario Kart Battle Arena</td><td>800</td></tr>
+<tr><td><b>Zona 3: High Thrill e Horror</b></td><td>1.800 m²</td><td>Assassin’s Creed Leap Tower e Resident Evil Spencer Mansion</td><td>600</td></tr>
+<tr><td><b>Zona 4: Creative e VR</b></td><td>1.500 m²</td><td>Minecraft Builder’s Zone e No Man’s Sky Observatory VR</td><td>450</td></tr>
+<tr><td><b>Hub Central e Gastronomia</b></td><td>1.500 m²</td><td>Taverna do RPG, Overcooked Fast-Food e Arena do Show Noturno</td><td>650</td></tr>
+<tr><td><b>Serviços, Saúde e Sanitários</b></td><td>500 m²</td><td>Centro Pokémon, Customization Rooms e Staff</td><td>150</td></tr>
+<tr><td><b>Estacionamento e Logística</b></td><td>1.500 m²</td><td>350 vagas de carros e 10 vagas para ônibus e vans</td><td>–</td></tr>
+</table></div>
+</section>
+
+<section id="orcamento">
+<h2>Planejamento orçamentário</h2>
+<p class="sub">Verba fixa de R$ 10.000.000,00, distribuída em cinco frentes.</p>
+<div class="bars">
+<div class="bar"><div class="t"><span>Construção e infraestrutura</span><span>R$ 4.500.000 · 45%</span></div><div class="trk"><i style="width:45%;background:var(--mag)"></i></div><small>Obras civis, engenharia mecânica das atrações, VR, iluminação e cenografia.</small></div>
+<div class="bar"><div class="t"><span>Terreno, leasing e imóvel</span><span>R$ 2.500.000 · 25%</span></div><div class="trk"><i style="width:25%;background:var(--cy)"></i></div><small>Aquisição ou locação de longo prazo do galpão de 10.000 m² e licenças territoriais.</small></div>
+<div class="bar"><div class="t"><span>Marketing e comunicação</span><span>R$ 1.500.000 · 15%</span></div><div class="trk"><i style="width:15%;background:var(--am)"></i></div><small>Campanha de lançamento, parcerias com influenciadores, jingle e mídia digital.</small></div>
+<div class="bar"><div class="t"><span>Recursos humanos e treinamento</span><span>R$ 1.000.000 · 10%</span></div><div class="trk"><i style="width:10%;background:var(--vi)"></i></div><small>Contratação, figurinos, treinamento de atores, brigadistas e equipe de operação.</small></div>
+<div class="bar"><div class="t"><span>Reserva operacional</span><span>R$ 500.000 · 5%</span></div><div class="trk"><i style="width:5%;background:var(--gr)"></i></div><small>Fundo de contingência para manutenção e fluxo de caixa inicial.</small></div>
+</div>
+<div class="tot"><span>Total do projeto</span><span>R$ 10.000.000,00</span></div>
+</section>
+
+<section id="marketing">
+<h2>Marketing e comunicação</h2>
+<p class="sub">A marca nasce nos games e fala a língua de quem joga.</p>
+<div class="g">
+<div class="card m"><h3>Logomarca</h3><p>O direcional gamer (D-Pad) fundido a uma roda-gigante futurista, em tons de neon magenta e ciano.</p></div>
+<div class="card v"><h3>Jingle</h3><p>Uma trilha que começa em som chiptune de 8 bits e evolui para um pop eletrônico moderno: <i>“Nexus World… Dê o play no seu mundo!”</i></p></div>
+<div class="card a"><h3>Canais</h3><p>Anúncios no YouTube Gaming, Twitch e TikTok, e patrocínio de campeonatos regionais de e-sports (CBLOL e Valorant).</p></div>
+<div class="card g2"><h3>Ação Beta Test</h3><p>Os primeiros 500 compradores do ingresso pré-venda ganham o selo e o badge físico exclusivo de “Beta Tester”.</p></div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">Projeto acadêmico de Design de Experiência de um Parque de Diversões, com verba fixa de R$ 10.000.000,00. As marcas e franquias citadas pertencem aos seus respectivos titulares e aparecem apenas como referência conceitual.</div></footer>
+</body>
+</html>
